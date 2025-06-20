@@ -1,0 +1,9 @@
+python library that are needed:-
+1.streamlit
+2.pandas
+3.numpy
+
+- to run this code above python library can be installed from code editor terminal
+
+- install a vs code extension "Streamlit runner" and then left click on file from file explorer then click on"run with streamlit"
+then browser will automatically run and your app is ready......
