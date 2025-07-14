@@ -1,6 +1,27 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+import time
+import json
+from streamlit_lottie import st_lottie
+
+# --- Splash Animation ---
+def load_lottiefile(filepath):
+    with open(filepath, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+if "show_intro" not in st.session_state:
+    st.session_state.show_intro = True
+
+if st.session_state.show_intro:
+    lottie_intro = load_lottiefile("Calculator.json")
+    splash = st.empty()
+    with splash.container():
+        st.markdown("<h1 style='text-align:center;'>Welcome to MATRIX CALCULATOR!</h1>", unsafe_allow_html=True)
+        st_lottie(lottie_intro, height=280, speed=1.0, loop=False)
+        time.sleep(4)
+    splash.empty()
+    st.session_state.show_intro = False
 
 # Title
 st.title("🔢 Interactive Matrix Calculator")
